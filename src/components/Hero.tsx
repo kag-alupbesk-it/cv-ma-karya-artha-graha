@@ -65,18 +65,18 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-wrap items-center gap-4"
           >
-            <button
-              onClick={onOpenInquiry}
-              className="bg-primary-600 hover:bg-primary-700 text-white font-sans text-sm font-bold px-8 py-4 rounded-xl transition-all transform hover:scale-[1.02] flex items-center gap-2 shadow-lg shadow-blue-600/30 group"
-            >
-              <span>Konsultasi Proyek</span>
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
             <a
               href="#catalog"
+              className="bg-primary-600 hover:bg-primary-700 text-white font-sans text-sm font-bold px-8 py-4 rounded-xl transition-all transform hover:scale-[1.02] flex items-center gap-2 shadow-lg shadow-blue-600/30 group"
+            >
+              <span>Lihat Katalog</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
+              href="#projects"
               className="bg-white/10 hover:bg-white/20 text-white font-sans text-sm font-bold px-8 py-4 rounded-xl transition-all backdrop-blur-sm border border-white/10 text-center"
             >
-              Lihat Katalog
+              Lihat Proyek
             </a>
           </motion.div>
 
