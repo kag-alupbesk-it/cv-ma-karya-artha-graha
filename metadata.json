@@ -1,0 +1,6 @@
+{
+  "name": "CV. Ma Karya Artha Graha",
+  "description": "Kontraktor Aluminium & Kaca Terbaik di Yogyakarta. Spesialis kusen aluminium, kaca tempered, jendela, pintu, dan facade gedung modern.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
