@@ -14,6 +14,7 @@ export default function Partners() {
     { name: 'MULIA GLASS', desc: 'Kaca Float & Reflektif Kualitas Ekstra' },
     { name: 'ALCOA', desc: 'Kusen Struktur Kokoh & Tahan Lama' },
     { name: 'DOW CORNING', desc: 'Sealant Struktural Kedap Cuaca Maksimal' },
+    { name: 'APLUS', desc: 'Profil & Aksesoris Aluminium Kualitas Premium' },
   ];
 
   return (

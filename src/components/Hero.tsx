@@ -73,10 +73,10 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
             <a
-              href="#projects"
+              href="#catalog"
               className="bg-white/10 hover:bg-white/20 text-white font-sans text-sm font-bold px-8 py-4 rounded-xl transition-all backdrop-blur-sm border border-white/10 text-center"
             >
-              Lihat Hasil Kerja
+              Lihat Katalog
             </a>
           </motion.div>
 
