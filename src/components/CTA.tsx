@@ -30,10 +30,7 @@ export default function CTA({ onOpenInquiry }: CTAProps) {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
         <div className="max-w-2xl text-left">
-          <div className="inline-flex items-center gap-2 bg-white/15 px-3 py-1 rounded-full text-white text-[10px] font-bold uppercase tracking-wider mb-4">
-            <Sparkles className="w-3 h-3 text-white" />
-            <span>KONSULTASI GRATIS & BERGARANSI</span>
-          </div>
+         
           <h2 className="text-3xl md:text-5xl font-display font-black text-white tracking-tight leading-tight">
             Mari Bangun Sesuatu yang Luar Biasa Bersama Kami
           </h2>
