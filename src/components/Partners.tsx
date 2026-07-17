@@ -51,10 +51,7 @@ export default function Partners() {
         </div>
 
         {/* Small Trust Badge */}
-        <div className="mt-12 inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-1.5 text-xs text-blue-300 font-medium">
-          <ShieldCheck className="w-4 h-4 text-blue-400" />
-          <span>Semua material bersertifikasi SNI dan dijamin keasliannya</span>
-        </div>
+        
       </div>
     </section>
   );
