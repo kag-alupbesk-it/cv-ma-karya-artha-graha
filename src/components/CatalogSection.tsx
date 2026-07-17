@@ -3,15 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import catalogImage1 from '../assets/images/interior_workspace_1784271729296.jpg';
 import catalogImage2 from '../assets/images/modern_office_corridor_1784271767234.jpg';
 import catalogImage3 from '../assets/images/office_facade_1784271712564.jpg';
 import catalogImage4 from '../assets/images/hero_glass_aluminium_1784271695241.jpg';
 
 export default function CatalogSection() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
+
   const catalogItems = [
     {
       title: 'Kusen Aluminium Premium',
@@ -78,6 +81,18 @@ export default function CatalogSection() {
     },
   ];
 
+  const totalPages = Math.ceil(catalogItems.length / itemsPerPage);
+  const paginatedItems = useMemo(() => {
+    const start = (currentPage - 1) * itemsPerPage;
+    return catalogItems.slice(start, start + itemsPerPage);
+  }, [catalogItems, currentPage]);
+
+  const handlePageChange = (page: number) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
+
   return (
     <section id="catalog" className="bg-slate-50 py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(59,130,246,0.08),_transparent_45%)]"></div>
@@ -95,7 +110,7 @@ export default function CatalogSection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
-          {catalogItems.map((item, index) => (
+          {paginatedItems.map((item, index) => (
             <motion.article
               key={item.title}
               initial={{ opacity: 0, y: 24 }}
@@ -137,6 +152,40 @@ export default function CatalogSection() {
             </motion.article>
           ))}
         </div>
+
+        {totalPages > 1 && (
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <button
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition-all hover:border-blue-300 hover:text-blue-600 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => handlePageChange(page)}
+                className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold transition-all ${
+                  currentPage === page
+                    ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20'
+                    : 'border border-slate-200 bg-white text-slate-600 hover:border-blue-300 hover:text-blue-600'
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+
+            <button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition-all hover:border-blue-300 hover:text-blue-600 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
