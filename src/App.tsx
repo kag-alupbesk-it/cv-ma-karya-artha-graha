@@ -6,16 +6,16 @@
  */
 
 import React, { useState } from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import WhyChooseUs from './components/WhyChooseUs';
-import CatalogSection from './components/CatalogSection';
-import Projects from './components/Projects';
-import Partners from './components/Partners';
-import CTA from './components/CTA';
-import Footer from './components/Footer';
-import InteractiveModal from './components/InteractiveModal';
+import Header from './app/(public)/components/Header';
+import Hero from './app/(public)/components/Hero';
+import About from './app/(public)/components/About';
+import WhyChooseUs from './app/(public)/components/WhyChooseUs';
+import CatalogSection from './app/(public)/components/CatalogSection';
+import Projects from './app/(public)/components/Projects';
+import Partners from './app/(public)/components/Partners';
+import CTA from './app/(public)/components/CTA';
+import Footer from './app/(public)/components/Footer';
+import InteractiveModal from './app/(public)/components/InteractiveModal';
 
 export default function App() {
   const [isInquiryOpen, setIsInquiryOpen] = useState(false);

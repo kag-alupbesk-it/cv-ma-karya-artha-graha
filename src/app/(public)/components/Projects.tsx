@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowUpRight, Search, SlidersHorizontal } from 'lucide-react';
-import { Project } from '../types';
+import { Project } from '../../../types';
 import projectImage1 from '../assets/images/modern_classroom_glass_1784271749947.jpg';
 import projectImage2 from '../assets/images/office_facade_1784271712564.jpg';
 import projectImage3 from '../assets/images/modern_office_corridor_1784271767234.jpg';

@@ -9,7 +9,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
-import { Testimonial } from '../types';
+import { Testimonial } from '../../../types';
 import testimonialBackground from '../assets/images/hero_glass_aluminium_1784271695241.jpg';
 
 export default function Testimonials() {
