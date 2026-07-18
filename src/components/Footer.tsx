@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import Image from 'next/image';
 import { Mail, MapPin, Phone, Clock, MessageSquare } from 'lucide-react';
 import logoMakarya from '../assets/images/logomakarya.png';
 
@@ -40,9 +41,11 @@ export default function Footer() {
           {/* Company Bio */}
           <div className="lg:col-span-4 flex flex-col items-start text-left">
             <div className="flex items-center gap-3 mb-6 group">
-              <img
+              <Image
                 src={logoMakarya}
                 alt="MA Karya Artha Graha"
+                width={40}
+                height={40}
                 className="h-10 w-auto object-contain rounded-md shadow-sm"
               />
               <div className="flex flex-col">
@@ -77,50 +80,85 @@ export default function Footer() {
                 <span>Senin - Sabtu: 08.00 - 16.00 WIB</span>
               </div>
             </div>
+
           </div>
 
-          {/* Quick Menu */}
-          <div className="lg:col-span-2 text-left">
-            <h4 className="text-white font-display font-bold text-sm uppercase tracking-wider mb-6">
-              Menu
-            </h4>
-            <ul className="flex flex-col gap-3 text-xs md:text-sm">
-              {menuLinks.map((link) => (
-                <li key={link.name}>
-                  <a href={link.href} className="hover:text-white transition-colors">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Right Side Column */}
+          <div className="lg:col-span-8 flex flex-col gap-10 lg:items-end">
+            <div className="w-full lg:max-w-[560px] lg:ml-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+                {/* Quick Menu */}
+                <div className="text-left">
+                  <h4 className="text-white font-display font-bold text-sm uppercase tracking-wider mb-6">
+                    Menu
+                  </h4>
+                  <ul className="flex flex-col gap-3 text-xs md:text-sm">
+                    {menuLinks.map((link) => (
+                      <li key={link.name}>
+                        <a href={link.href} className="hover:text-white transition-colors">
+                          {link.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-          {/* Services */}
-          <div className="lg:col-span-3 text-left">
-            <h4 className="text-white font-display font-bold text-sm uppercase tracking-wider mb-6">
-              Layanan Spesialis
-            </h4>
-            <ul className="flex flex-col gap-3 text-xs md:text-sm">
-              {serviceLinks.map((link) => (
-                <li key={link.name} className="hover:text-white transition-colors">
-                  {link.name}
-                </li>
-              ))}
-            </ul>
-          </div>
+                {/* Services */}
+                <div className="text-left">
+                  <h4 className="text-white font-display font-bold text-sm uppercase tracking-wider mb-6">
+                    Layanan Spesialis
+                  </h4>
+                  <ul className="flex flex-col gap-3 text-xs md:text-sm">
+                    {serviceLinks.map((link) => (
+                      <li key={link.name} className="hover:text-white transition-colors">
+                        {link.name}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
 
-          {/* Help Links */}
-          <div className="lg:col-span-3 text-left">
-            <h4 className="text-white font-display font-bold text-sm uppercase tracking-wider mb-6">
-              Informasi Bantuan
-            </h4>
-            <ul className="flex flex-col gap-3 text-xs md:text-sm">
-              {helpLinks.map((link) => (
-                <li key={link.name} className="hover:text-white transition-colors">
-                  {link.name}
-                </li>
-              ))}
-            </ul>
+            {/* Help Links */}
+            <div className="w-full lg:max-w-[560px] lg:ml-auto">
+              <div className="text-left">
+                <h4 className="text-white font-display font-bold text-sm uppercase tracking-wider mb-6">
+                  Informasi Bantuan
+                </h4>
+                <ul className="flex flex-col gap-3 text-xs md:text-sm">
+                  {helpLinks.map((link) => (
+                    <li key={link.name} className="hover:text-white transition-colors">
+                      {link.name}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="w-full lg:max-w-[560px] lg:ml-auto rounded-2xl border border-white/10 bg-white/5 p-2 shadow-xl shadow-black/15">
+              <div className="mb-2 flex items-center justify-between gap-2 px-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-blue-400">
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-3.5 w-3.5" />
+                  <span>Lokasi Workshop</span>
+                </div>
+                <a
+                  href="https://www.google.com/maps?q=-7.832285,110.44778&z=16"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[10px] font-medium text-gray-300 transition-colors hover:text-white"
+                >
+                  Buka di Google Maps
+                </a>
+              </div>
+              <iframe
+                src="https://www.google.com/maps?q=-7.832285,110.44778&z=16&output=embed"
+                title="Lokasi CV. Ma Karya Artha Graha"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+                className="h-[220px] w-full rounded-xl border-0 sm:h-[240px] md:h-[260px]"
+              />
+            </div>
           </div>
         </div>
 

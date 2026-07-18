@@ -1,11 +1,16 @@
+'use client';
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Play, X, Star, FileText } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import workshopBackground from '../assets/images/interior_workspace_1784271729296.jpg';
+import modalPreview from '../assets/images/hero_glass_aluminium_1784271695241.jpg';
 
 export default function VideoSection() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,11 +20,11 @@ export default function VideoSection() {
       <section className="relative h-[480px] bg-charcoal-900 flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img
-            src="/src/assets/images/interior_workspace_1784271729296.jpg"
+          <Image
+            src={workshopBackground}
             alt="Interior Glass & Aluminium Showcase"
+            fill
             className="w-full h-full object-cover opacity-70"
-            referrerPolicy="no-referrer"
           />
           {/* Dark Overlay with some cyan tint */}
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/90 via-charcoal-900/40 to-charcoal-900/90"></div>
@@ -74,11 +79,11 @@ export default function VideoSection() {
               <div className="grid grid-cols-1 md:grid-cols-12 h-full">
                 {/* Video / Large Image Preview Area */}
                 <div className="md:col-span-8 bg-black h-[250px] md:h-[450px] relative">
-                  <img
-                    src="/src/assets/images/hero_glass_aluminium_1784271695241.jpg"
+                  <Image
+                    src={modalPreview}
                     alt="Ma Karya Workshop Showcase"
+                    fill
                     className="w-full h-full object-cover"
-                    referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent p-6 flex flex-col justify-end">
                     <span className="text-xs font-mono font-bold text-blue-400 uppercase tracking-widest mb-1">

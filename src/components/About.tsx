@@ -4,8 +4,11 @@
  */
 
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'motion/react';
 import { ShieldCheck, Building2, Eye, Award } from 'lucide-react';
+import officeFacade from '../assets/images/office_facade_1784271712564.jpg';
+import interiorWorkspace from '../assets/images/interior_workspace_1784271729296.jpg';
 
 export default function About() {
   const points = [
@@ -126,11 +129,12 @@ export default function About() {
               transition={{ duration: 0.8 }}
               className="relative rounded-2xl overflow-hidden shadow-2xl group border border-white/10"
             >
-              <img
-                src="/src/assets/images/office_facade_1784271712564.jpg"
+              <Image
+                src={officeFacade}
                 alt="CV Ma Karya Artha Graha - Office Facade Project"
+                width={600}
+                height={320}
                 className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                 <div>
@@ -148,11 +152,12 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative rounded-2xl overflow-hidden shadow-2xl group border border-white/10"
             >
-              <img
-                src="/src/assets/images/interior_workspace_1784271729296.jpg"
+              <Image
+                src={interiorWorkspace}
                 alt="CV Ma Karya Artha Graha - Interior Workspace Project"
+                width={600}
+                height={320}
                 className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                 <div>

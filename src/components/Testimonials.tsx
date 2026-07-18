@@ -1,12 +1,16 @@
+'use client';
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { Testimonial } from '../types';
+import testimonialBackground from '../assets/images/hero_glass_aluminium_1784271695241.jpg';
 
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -47,11 +51,11 @@ export default function Testimonials() {
     <section className="relative py-24 bg-charcoal-900 overflow-hidden">
       {/* Background image with glass blur */}
       <div className="absolute inset-0 z-0 opacity-40">
-        <img
-          src="/src/assets/images/hero_glass_aluminium_1784271695241.jpg"
+        <Image
+          src={testimonialBackground}
           alt="Architectural Backdrop"
+          fill
           className="w-full h-full object-cover blur-sm scale-105"
-          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-charcoal-900/90"></div>
       </div>
@@ -79,11 +83,12 @@ export default function Testimonials() {
 
               {/* Author Info */}
               <div className="flex flex-col items-center gap-3">
-                <img
+                <Image
                   src={testimonials[currentIndex].avatar}
                   alt={testimonials[currentIndex].author}
+                  width={56}
+                  height={56}
                   className="w-14 h-14 rounded-full object-cover border-2 border-blue-500 shadow-md"
-                  referrerPolicy="no-referrer"
                 />
                 <div>
                   <div className="font-display font-bold text-white text-base">

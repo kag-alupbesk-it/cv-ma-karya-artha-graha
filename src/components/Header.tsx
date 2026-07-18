@@ -1,9 +1,12 @@
+'use client';
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Menu, X, Phone, ShieldCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import logoMakarya from '../assets/images/logomakarya.png';
@@ -50,9 +53,11 @@ export default function Header({ onOpenInquiry }: HeaderProps) {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           {/* Logo */}
           <a href="#home" className="flex items-center gap-3 group" id="logo-link">
-            <img
+            <Image
               src={logoMakarya}
               alt="MA Karya Artha Graha"
+              width={40}
+              height={40}
               className="h-10 w-auto object-contain rounded-md shadow-sm"
             />
             <div className="flex flex-col">

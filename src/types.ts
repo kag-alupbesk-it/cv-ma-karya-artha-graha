@@ -1,3 +1,5 @@
+import type { StaticImageData } from 'next/image';
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
@@ -9,7 +11,7 @@ export interface Project {
   location: string;
   title: string;
   description: string;
-  image: string;
+  image: string | StaticImageData;
   category: string;
 }
 

@@ -4,8 +4,10 @@
  */
 
 import React from 'react';
+import Image from 'next/image';
 import { ArrowRight, Sparkles, Trophy, CheckCircle2 } from 'lucide-react';
 import { motion } from 'motion/react';
+import heroBackground from '../assets/images/hero_glass_aluminium_1784271695241.jpg';
 
 interface HeroProps {
   onOpenInquiry: () => void;
@@ -19,11 +21,12 @@ export default function Hero({ onOpenInquiry }: HeroProps) {
     >
       {/* Hero Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/src/assets/images/hero_glass_aluminium_1784271695241.jpg"
+        <Image
+          src={heroBackground}
           alt="CV Ma Karya Artha Graha - Aluminium & Kaca Yogyakarta"
-          className="w-full h-full object-cover opacity-60 scale-105 animate-[subtle-zoom_20s_infinite_alternate]"
-          referrerPolicy="no-referrer"
+          fill
+          priority
+          className="object-cover opacity-60 scale-105 animate-[subtle-zoom_20s_infinite_alternate]"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal-900 via-charcoal-900/80 to-transparent"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-transparent to-black/40"></div>

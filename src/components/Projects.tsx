@@ -1,12 +1,18 @@
+'use client';
+
 /**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowUpRight, Search, SlidersHorizontal } from 'lucide-react';
 import { Project } from '../types';
+import projectImage1 from '../assets/images/modern_classroom_glass_1784271749947.jpg';
+import projectImage2 from '../assets/images/office_facade_1784271712564.jpg';
+import projectImage3 from '../assets/images/modern_office_corridor_1784271767234.jpg';
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('Semua');
@@ -20,7 +26,7 @@ export default function Projects() {
       location: 'Depok, Sleman, Yogyakarta',
       title: 'Gedung Sekolah Swasta Modern',
       description: 'Pemasangan menyeluruh kusen aluminium powder coating hitam dikombinasikan dengan kaca double-glazed tebal untuk mereduksi kebisingan luar dan menjaga suhu ruangan ber-AC agar tetap hemat energi.',
-      image: '/src/assets/images/modern_classroom_glass_1784271749947.jpg',
+      image: projectImage1,
       category: 'Kusen Aluminium',
     },
     {
@@ -29,7 +35,7 @@ export default function Projects() {
       location: 'Kasihan, Bantul, Yogyakarta',
       title: 'Facade Kaca & Kanopi Tempered Kantor IT',
       description: 'Pengerjaan curtain wall kaca tempered 12mm yang memberikan tampilan futuristik, bersih, dan mewah pada gedung komersial tiga lantai, lengkap dengan bracket spider fitting stainless steel berkualitas tinggi.',
-      image: '/src/assets/images/office_facade_1784271712564.jpg',
+      image: projectImage2,
       category: 'Facade Gedung',
     },
     {
@@ -38,7 +44,7 @@ export default function Projects() {
       location: 'Kotagede, Yogyakarta',
       title: 'Partisi Kaca Minimalis Creative Space',
       description: 'Instalasi partisi sekat kaca tempered internal kantor dengan kusen aluminium tipis (slim frame profile) untuk memaksimalkan pencahayaan alami di area koridor dan ruang rapat.',
-      image: '/src/assets/images/modern_office_corridor_1784271767234.jpg',
+      image: projectImage3,
       category: 'Kaca Tempered',
     },
   ];
@@ -125,11 +131,11 @@ export default function Projects() {
 
                 {/* Image Column */}
                 <div className="lg:col-span-6 min-h-[300px] lg:min-h-full relative overflow-hidden bg-charcoal-900 border-t lg:border-t-0 lg:border-l border-white/10">
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
+                    fill
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                    referrerPolicy="no-referrer"
                   />
                   {/* Glass subtle tint */}
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/40 to-transparent"></div>
