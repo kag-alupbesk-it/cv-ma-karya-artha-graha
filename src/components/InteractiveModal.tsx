@@ -49,7 +49,7 @@ export default function InteractiveModal({ isOpen, onClose }: InteractiveModalPr
   };
 
   const handleWhatsAppRedirect = () => {
-    const phone = '6281390347775'; // CV. Ma Karya WhatsApp Number
+    const phone = '6283847105847';
     const message = `Halo CV. Ma Karya Artha Graha,\n\nSaya ingin berkonsultasi mengenai proyek konstruksi.\n\nBerikut rincian saya:\n- Nama: ${formData.nama}\n- WhatsApp: ${formData.whatsapp}\n- Kategori: ${formData.kategori}\n- Lokasi Proyek: ${formData.lokasi || '-'}\n- Deskripsi Kebutuhan: ${formData.deskripsi || '-'}\n\nMohon hubungi saya kembali untuk penawaran harga. Terima kasih!`;
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${phone}?text=${encodedMessage}`, '_blank');

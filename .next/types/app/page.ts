@@ -1,4 +1,4 @@
-// File: C:\Users\HYPE AMD\cv.-ma-karya-artha-graha\app\page.tsx
+// File: /media/diky/Data/Magang/Projek/cv-ma-karya-artha-graha/app/page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

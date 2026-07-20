@@ -34,3 +34,20 @@ export interface ServiceDetail {
   description: string;
   features: string[];
 }
+
+export interface CatalogVariant {
+  id: string;
+  name: string;
+  description: string;
+  priceLabel: string;
+  priceValue: number;
+}
+
+export interface CatalogItem {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  image: string | StaticImageData;
+  variants: CatalogVariant[];
+}
